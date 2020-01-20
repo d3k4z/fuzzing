@@ -28,6 +28,8 @@ echo core >/proc/sys/kernel/core_pattern
 
 ## Scenarios
 
+
+```
 +-------------+          +---------+           +--------------------+
 | Source Code +---yes---->  input? +---stdin--->   compile & fuzz   |
 +-----+-------+          +----+----+           +------+----------+--+
@@ -58,6 +60,7 @@ echo core >/proc/sys/kernel/core_pattern
       |                       v                +--------------------+
       +---------------else----+--------------->+  afl unicorn / emu |
                                                +--------------------+
+```
 
 ## AFL
 
@@ -127,7 +130,7 @@ afl-fuzz -S slave2 -i in/ -o out/ [path_to_binary] @@
 
 #### Dotnet fuzzing
 
-In order to fuzz dotnet(core) binaries one should use sharpfuzz. Example of the technique can be found [here](https://github.com/Metalnem/sharpfuzz-samples)
+In order to fuzz dotnet(core) binaries one should use [sharpfuzz](https://github.com/Metalnem/sharpfuzz). Example of the technique can be found [here](https://github.com/Metalnem/sharpfuzz-samples)
 
 In order to skip paching and rebuilding the AFL binaries you need to set the following env variable:
 `AFL_SKIP_BIN_CHECK`
